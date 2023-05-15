@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraped Comments</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Scraped Comments</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Comment</th>
+                <th>Sentiment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ comment.text }}</td>
+                <td>{{ comment.sentiment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
